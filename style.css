@@ -12,7 +12,12 @@ body {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: #fff;
+    transition: 0.3s;
+}
+
+a:hover{
+    opacity: 0.7;
 }
 
 .btn {
@@ -20,7 +25,7 @@ a {
     padding: 15px 60px;
     font-size: 1.1rem;
     text-transform: uppercase;
-    background: #f77c3e;
+    background: #111;
     color: #eee;
     border-radius: 5px;
     transition: background 500ms ease;
@@ -28,7 +33,7 @@ a {
 
 .btn:hover {
     cursor: pointer;
-    background: #50232e;
+    background: #000;
 }
 
 .headline {
@@ -43,23 +48,29 @@ a {
 /* Navbar */
 #navbar {
     width: 100%;
-    background: #50232e;
+    background: #670d0f;
     color: #eee;
-    height: 80px;
+    height: 8vh;
     position: fixed;
 }
 
 #navbar-container {
     width: 80%;
-    height: 100%;
+    height: 8vh;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    font-family: system-ui, -apple-system, 
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+    'Helvetica Neue', sans-serif;
 }
 
 .logo {
     font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 #navbar-items {
@@ -69,7 +80,72 @@ a {
 }
 
 #navbar-items li {
-    padding: 10px;
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu{
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+}
+
+@media (max-width: 999px){
+    body{
+        overflow-x: hidden;
+    }
+    #navbar-items{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #670d0f;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    #navbar-items li{
+        margin: 0;
+        opacity: 0;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    .navbar-items.active{
+        transform: translateX(0);
+    }
+}
+
+@keyframes navbarLinkFade{
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .mobile-menu.active .line1 {
+      transform: rotate(-45deg) translate(-8px, 8px);
+    }
+    
+    .mobile-menu.active .line2 {
+      opacity: 0;
+    }
+    
+    .mobile-menu.active .line3 {
+      transform: rotate(45deg) translate(-5px, -7px);
 }
 
 /* Showcase */
@@ -79,7 +155,7 @@ a {
     justify-content: center;
     align-items: center;
     color: #eee;
-    background: url('https://wallpapers.com/images/hd/food-4k-1pf6px6ryqfjtnyr.jpg') no-repeat center center/cover;
+    background: url('/img/showcase.jpg') no-repeat center center/cover;
 
     /* Overlay */
     background-color: rgba(0,0,0,0.5);
@@ -103,23 +179,20 @@ a {
 #clients {
     width: 100%;
     background: #eee;
-    color: #000;
+    color: #111;
     padding: 50px;
-    font-size: 1.2rem;
 }
 
 #clients-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
-    padding: 50px;
-    font-size: 1.2rem;
+    padding: 15px;
 }
 
 .client {
     display: inline-block;
-    width: 70%;
-    padding: 15px;
+    width: 25%;
 }
 
 /* About */
@@ -141,7 +214,7 @@ a {
 .feature {
     display: flex;
     flex-direction: column;
-    background: #f77c3e;
+    background: #333;
     padding: 20px;
     border-radius: 5px;
 }
@@ -179,7 +252,7 @@ a {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    background: #000;
+    background: #333;
     padding: 15px;
     margin: 15px 0;
     border-radius: 5px;
@@ -223,15 +296,15 @@ a {
 
 .gallery-image {
     display: inline-block;
-    width: 440px;
-    height: 260px;
+    width: 540px;
+    height: 360px;
     border-radius: 5px;
 }
 
 /* Footer */
 #footer {
     background: #222;
-    color: #a2cca5;
+    color: #eee;
     padding: 30px;
     text-align: center;
 }
