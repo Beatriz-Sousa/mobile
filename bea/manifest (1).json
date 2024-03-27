@@ -1,0 +1,43 @@
+{
+  "background_color": "#ffffff",
+  "description": "Encontre os melhores restaurantes, bares, chefes renomados e receitas para saborear e criar em casa.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "ComeAqui",
+  "orientation": "portrait",
+  "scope": "/https://www.tripadvisor.com.br/Restaurants-g304560-Recife_State_of_Pernambuco.html  https://cocobambu.com/unidade/recife/  https://www.parraxaxa.com.br/  https://www.ocamarada.com.br/  https://www.instagram.com/bodedono/",
+  "short_name": "ComeAqui",
+  "start_url": "/comeaqui",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "android/android-launchericon-512-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "android/android-launchericon-192-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "id": "cm ai",
+  "lang": "pt",
+  "display_override": [
+    "fullscreen",
+    "window-controls-overlay",
+    "standalone"
+  ],
+  "categories": [
+    "food",
+    "navigation",
+    "shopping"
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.tripadvisor.tripadvisor&amp;pcampaignid=web_share",
+      "id": ""
+    }
+  ]
+}
